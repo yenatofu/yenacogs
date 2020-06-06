@@ -23,33 +23,33 @@ from cogs.utils import checks
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-PATH_LIST = ['data', 'kixkogs']
+PATH_LIST = ['data', 'yenacogs']
 PATH = os.path.join(*PATH_LIST)
-SERVER_INDEX_PATH_LIST = ['data', 'kixkogs', 'server_index']
-SERVER_INDEX_PATH = os.path.join(*SERVER_INDEX_PATH_LIST)
-MEMBER_INDEX_PATH_LIST = ['data', 'kixkogs', 'member_index']
+GUILD_INDEX_PATH_LIST = ['data', 'yenacogs', 'guild_index']
+GUILD_INDEX_PATH = os.path.join(*GUILD_INDEX_PATH_LIST)
+MEMBER_INDEX_PATH_LIST = ['data', 'yenacogs', 'member_index']
 MEMBER_INDEX_PATH = os.path.join(*MEMBER_INDEX_PATH_LIST)
-EMOJI_INDEX_PATH_LIST = ['data', 'kixkogs', 'emoji_index']
+EMOJI_INDEX_PATH_LIST = ['data', 'yenacogs', 'emoji_index']
 EMOJI_INDEX_PATH = os.path.join(*EMOJI_INDEX_PATH_LIST)
 
 
 class Indexer:
-    """Indexes servers and members that the bot is in"""
+    """Indexes the servers and members that the bot is in"""
 
     def __init__(self, bot):
         self.bot = bot
 
 
-    async def search_server(self, ctx, server_id):
-        if server_id == None:
-            if ctx.message.server != None:
-                return ctx.message.server
+    async def search_guild(self, ctx, guild_id):
+        if guild_id == None:
+            if ctx.message.guild != None:
+                return ctx.message.guild
             else:
                 await self.bot.say("I need a server id to index a server!")
                 return None
         else:
-            for s in self.bot.servers:
-                if server_id == s.id:
+            for s in self.bot.guilds:
+                if guild_id == s.id:
                     return s
 
 
