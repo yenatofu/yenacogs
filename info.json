@@ -1,0 +1,10 @@
+{
+    "AUTHOR" : "예나#2304(YenaTofu)",
+    "INSTALL_MSG" : "Please head to https://discord.kpopiverse.com for any comments etc.",
+    "NAME" : "Indexer",
+    "SHORT" : "Edited into V3 by YenaTofu - Original V2 version by Kixiron",
+    "DESCRIPTION" : "Fetches detailed information on servers and members.",
+    "TAGS" : ["owner", "management", "member", "server", "utility", "stalk", "tracking"],
+    "REQUIREMENTS" : [],
+    "HIDDEN" : false
+}
